@@ -37,6 +37,9 @@
     var meshInput = document.getElementById('meshInput');
     var result = document.getElementById('text');
     
+    //$.get("../meshes/homer.off", function(src) {
+    //let lines = src.split("\n");
+
     meshInput.addEventListener('change', function(e) {
         let reader = new FileReader();
         reader.onload = function(e) {
