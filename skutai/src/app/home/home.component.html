@@ -1,10 +1,19 @@
-<div class="flex relative w-full min-h-screen">
+<div class="flex relative w-full min-h-screen -z-10 text-center">
     <img src="../../assets/CitySunsetPixelArt.gif" alt="City Sunset" class="flex min-w-full min-h-full bg-cover">
 
-    <!-- TODO: make greeting look like it is from a terminal -->
-    <div class="absolute top-0 left-0 p-2 bg-gradient-to-r from-orange-400 from-80%">
-        <span class="font-mono font-bold text-white text-2xl whitespace-pre-line">
-            {{ greeting }}
-        </span>
-    </div>
+    <ng-container *ngIf="!doneGreeting; else animateOut">
+        <div class="w-full absolute top-0 left-0 pt-2 bg-gradient-to-r from-transparent from-10% via-orange-400 via-30% to-transparent%">
+            <span class="font-mono font-bold text-white text-2xl whitespace-pre">
+                {{ greeting }}
+            </span>
+        </div>
+    </ng-container>
+    <ng-template #animateOut>
+        <div class="w-full absolute top-0 left-0 pt-2 bg-gradient-to-r from-transparent from-10% via-orange-400 via-30% to-transparent% animate-slide-up">
+            <span class="font-mono font-bold text-white text-2xl whitespace-pre">
+                {{ greeting }}
+            </span>
+        </div>
+    </ng-template>
+    
 </div>

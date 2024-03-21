@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subscription, delay, from, interval, map, of } from 'rxjs';
+import { Observable, Subscription, interval } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -16,13 +16,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   interval1$: Observable<number> = interval(75);
   interval2$: Observable<number> = interval(1000);
 
-  fullGreeting: string = "Hi there! |Thanks for checking out my website!\n| Feel free to use any of the buttons in the top right to look around.\n| Or just watch the city go by for a while |- that's cool too.";
+  fullGreeting: string = "Hi there! |Thanks for visiting my website!\n| Feel free to use any of the buttons in the top right to look around.\n| Or just watch the city go by for a while |- that's cool too.";
   cursor: string = "█";
   greeting: string = "█";
   typing: boolean = true;
   characterIndex: number = 0;
   skipCount: number = 0;
-  initailWait: number = 1000;
+  startingDelay: number = 1000;
+  endingDelay: number = 10000;
+  doneGreeting: boolean = false;
 
   constructor() {
 
@@ -38,13 +40,34 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.subscription1 = this.interval1$.subscribe((x) => {
         if (this.skipCount <= 0) {
           if (this.characterIndex <= this.fullGreeting.length) {
-            this.typing = true;
-            this.greeting = this.fullGreeting.slice(0, this.characterIndex) + this.cursor;
+            let takeExtraChar = false;
+            let PutCursorOnNewLine = false;
+
+            if (this.fullGreeting[this.characterIndex] == "\n") {
+              PutCursorOnNewLine = true;
+            }
+
+            if (this.fullGreeting[this.characterIndex - 1] == "\n") {
+              // insert a space in the full greeting
+              this.fullGreeting = this.fullGreeting.slice(0, this.characterIndex - 1) + " " + this.fullGreeting.slice(this.characterIndex - 1);
+              this.characterIndex++;
+              takeExtraChar = true;
+            }
+
+            if (takeExtraChar) {
+              this.greeting = this.fullGreeting.slice(0, this.characterIndex + 1) + this.cursor;
+            }
+            else if (PutCursorOnNewLine) {
+              this.greeting = this.fullGreeting.slice(0, this.characterIndex) + " \n" + this.cursor;
+            }
+            else {
+              this.greeting = this.fullGreeting.slice(0, this.characterIndex) + this.cursor;
+            }
 
             // if the next character is |
             if (this.fullGreeting[this.characterIndex + 1] == "|") {
               // remove the |
-              this.fullGreeting = this.fullGreeting.slice(0, this.characterIndex + 1) + this.fullGreeting.slice(this.characterIndex + 2);
+              this.fullGreeting = this.fullGreeting.replace("|", "");
               this.pauseTyping(10);
             }
 
@@ -52,6 +75,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           }
           else {
             this.typing = false;
+            // wait a moment before declaring the greeting done
+            setTimeout(() => {
+              this.doneGreeting = true;
+            }, this.endingDelay);
           }
         }
         else {
@@ -62,20 +89,19 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.subscription2 = this.interval2$.subscribe((x) => {
         if (!this.typing) {
           if (x % 2 == 0 && !this.greeting.includes(this.cursor)) {
-            this.greeting = this.greeting + this.cursor;
+            this.greeting = this.fullGreeting.trim() + this.cursor;
           }
           else {
-            this.greeting = this.greeting.replaceAll("█", "");
+            this.greeting = this.greeting.replaceAll("█", " ");
           }
         }
       });
 
 
-    }, this.initailWait);
+    }, this.startingDelay);
   }
 
   pauseTyping(skipCount: number) {
-    this.typing = false;
     this.skipCount = skipCount;
   }
 
