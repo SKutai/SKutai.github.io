@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
               this.greeting = this.fullGreeting.slice(0, this.characterIndex + 1) + this.cursor;
             }
             else if (PutCursorOnNewLine) {
-              this.greeting = this.fullGreeting.slice(0, this.characterIndex) + " \n" + this.cursor;
+              this.greeting = this.fullGreeting.slice(0, this.characterIndex) + " \n " + this.cursor;
             }
             else {
               this.greeting = this.fullGreeting.slice(0, this.characterIndex) + this.cursor;
