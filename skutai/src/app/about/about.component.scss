@@ -1,0 +1,19 @@
+.white-angle {
+  clip-path: polygon(0 0, 45% 0, 55% 50%, 45% 100%, 0 100%);
+}
+
+@keyframes rise-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(5%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise-fade {
+  animation: rise-fade 1.5s forwards;
+}
