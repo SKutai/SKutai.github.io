@@ -1,0 +1,12 @@
+<div class="flex relative w-full h-full">
+    <img src="../../assets/pixel_city.gif" alt="City Sunset" class="flex min-w-full min-h-full bg-cover -z-10">
+
+    <div class=" absolute h-2/3 pl-4 flex items-center " [ngClass]="{' animate-pulse ': !focusOnEmail,
+                                                                     ' ' : focusOnEmail }">
+        <span (mouseenter)="onFocus()" (mouseleave)="offFocus()" class="text-3xl font-bold text-white">
+            Wanna talk? <br>
+            Email me: <a href="mailto:KutaiSeraiah@gmail.com">KutaiSeraiah&#64;gmail.com</a>
+        </span>
+    </div>
+
+</div>
