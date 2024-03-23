@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
-
+    
   }
 
   ngAfterViewInit(): void {

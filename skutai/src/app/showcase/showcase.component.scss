@@ -1,7 +1,55 @@
-.angle-pointing-right {
-    clip-path: polygon(0 0, 25% 0, 35% 50%, 25% 100%, 0 100%);
+.indent-pointing-right {
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 25% 100%, 35% 50%);
 }
 
-.angle-pointing-left {
-    clip-path: polygon(65% 0, 100% 0, 100% 100%, 65% 100%, 75% 50%);
+.indent-pointing-left {
+    clip-path: polygon(0 0, 75% 0, 65% 50%, 75% 100%, 0 100%);
+}
+
+.bg-amp {
+    background-image: url('../../assets/amp.png');
+}
+
+.bg-bag-of-words-graph {
+    background-image: url('../../assets/BagOfWordsGraph.png');
+}
+
+.bg-city-sunset-pixel-art {
+    background-image: url('../../assets/CitySunsetPixelArt.gif');
+}
+
+.fake-cat {
+    background-image: url('../../assets/fakeCat.png');
+}
+
+.location-note {
+    background-image: url('../../assets/locationNote.jpg');
+}
+
+.mesh-processing {
+    background-image: url('../../assets/meshProcessing.png');
+}
+
+.portrait {
+    background-image: url('../../assets/portrait.jpg');
+}
+
+.ray-tracer {
+    background-image: url('../../assets/rayTracer.png');
+}
+
+.safari-man {
+    background-image: url('../../assets/safariMan.png');
+}
+
+.smoke-stack {
+    background-image: url('../../assets/smokeStack.png');
+}
+
+.tractor-vs-tralie {
+    background-image: url('../../assets/tractorVSTralie.png');
+}
+
+.ultimate2 {
+    background-image: url('../../assets/ultimate2.jpg');
 }
