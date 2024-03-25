@@ -6,6 +6,15 @@
     clip-path: polygon(0 0, 75% 0, 65% 50%, 75% 100%, 0 100%);
 }
 
+.bg-svsports-portal {
+    background-position-x: right 5%;
+    background-size: 20%;
+    background-position-y: center;
+    background-color: white;
+    background-image: url('../../assets/svsports-portal.png');
+    background-repeat: no-repeat;
+}
+
 .fake-cat {
     background-size: 8%;
     background-position-y: center;
