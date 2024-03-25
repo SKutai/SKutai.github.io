@@ -5,12 +5,12 @@
 
     <div>
         <ul class="navbar-links flex flex-row text-2xl space-x-8">
-            <li class="px-2 rounded-lg hover:bg-slate-100 hover:text-black hover:cursor-pointer"><a href="/home">Home</a></li>
-            <li class="px-2 rounded-lg hover:bg-slate-100 hover:text-black hover:cursor-pointer"><a href="/about">About</a>
+            <li class=" px-2 rounded-lg hover:bg-slate-100 hover:text-black hover:cursor-pointer " [ngClass]="{ ' text-black ': currentPage == '/home', ' text-white ': currentPage != '/home'}"><a href="/home">Home</a></li>
+            <li class="px-2 rounded-lg hover:bg-slate-100 hover:text-black hover:cursor-pointer" [ngClass]="{ ' text-black ': currentPage == '/about', ' text-white ': currentPage != '/about'}"><a href="/about">About</a>
             </li>
-            <li class="px-2 rounded-lg hover:bg-slate-100 hover:text-black hover:cursor-pointer"><a
+            <li class="px-2 rounded-lg hover:bg-slate-100 hover:text-black hover:cursor-pointer" [ngClass]="{ ' text-black ': currentPage == '/showcase', ' text-white ': currentPage != '/showcase'}"><a
                     href="/showcase">Showcase</a></li>
-            <li class="px-2 rounded-lg hover:bg-slate-100 hover:text-black hover:cursor-pointer"><a
+            <li class="px-2 rounded-lg hover:bg-slate-100 hover:text-black hover:cursor-pointer" [ngClass]="{ ' text-black ': currentPage == '/contact', ' text-white ': currentPage != '/contact'}"><a
                     href="/contact">Contact</a></li>
         </ul>
     </div>
