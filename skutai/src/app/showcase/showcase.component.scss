@@ -6,48 +6,93 @@
     clip-path: polygon(0 0, 75% 0, 65% 50%, 75% 100%, 0 100%);
 }
 
-.bg-amp {
-    background-image: url('../../assets/amp.png');
+.fake-cat {
+    background-size: 8%;
+    background-position-y: center;
+    background-position-x: left 10%;
+    background-color: white;
+    background-image: url('../../assets/fakeCat.png');
+    background-repeat: no-repeat;
 }
 
 .bg-bag-of-words-graph {
+    background-position-x: right 5%;
+    background-size: 15%;
+    background-position-y: center;
+    background-color: white;
     background-image: url('../../assets/BagOfWordsGraph.png');
+    background-repeat: no-repeat;
+}
+
+.bg-amp {
+    background-position-y: center;
+    background-position-x: left 5%;
+    background-size: 20%;
+    background-color: black;
+    background-image: url('../../assets/amp.png');
+    background-repeat: no-repeat;
+}
+
+.ray-tracer {
+    background-position-y: center;
+    background-position-x: right;
+    background-size: 30%;
+    background-color: black;
+    background-image: url('../../assets/rayTracer.png');
+    background-repeat: no-repeat;
+}
+
+.mesh-processing {
+    background-position-y: center;
+    background-position-x: left 5%;
+    background-size: 20%;
+    background-color: black;
+    background-image: url('../../assets/meshProcessing.png');
+    background-repeat: no-repeat;
+}
+
+.tractor-vs-tralie {
+    background-position-x: right 5%;
+    background-position-y: center;
+    background-size: 15%;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-image: url('../../assets/tractorVSTralie.png');
+}
+
+.smoke-stack {
+    background-position-y: center;
+    background-position-x: left 5%;
+    background-size: 20%;
+    background-color: rgb(51, 51, 102);
+    background-image: url('../../assets/smokeStack.png');
+    background-repeat: no-repeat;
+}
+
+.safari-man {
+    background-position-y: center;
+    background-position-x: right 5%;
+    background-size: 20%;
+    background-image: url('../../assets/safariMan.png');
+    background-color: white;
+    background-repeat: no-repeat;
+}
+
+.location-note {
+    background-position-y: center;
+    background-position-x: left 10%;
+    background-size: 5%;
+    background-color: white;
+    background-image: url('../../assets/locationNote.jpg');
+    background-repeat: no-repeat;
 }
 
 .bg-city-sunset-pixel-art {
     background-image: url('../../assets/CitySunsetPixelArt.gif');
 }
 
-.fake-cat {
-    background-image: url('../../assets/fakeCat.png');
-}
-
-.location-note {
-    background-image: url('../../assets/locationNote.jpg');
-}
-
-.mesh-processing {
-    background-image: url('../../assets/meshProcessing.png');
-}
-
 .portrait {
     background-image: url('../../assets/portrait.jpg');
-}
-
-.ray-tracer {
-    background-image: url('../../assets/rayTracer.png');
-}
-
-.safari-man {
-    background-image: url('../../assets/safariMan.png');
-}
-
-.smoke-stack {
-    background-image: url('../../assets/smokeStack.png');
-}
-
-.tractor-vs-tralie {
-    background-image: url('../../assets/tractorVSTralie.png');
 }
 
 .ultimate2 {
