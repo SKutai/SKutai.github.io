@@ -1,39 +1,28 @@
-.indent-pointing-right {
+@mixin background-properties($position-x, $size, $image) {
+    background: white url($image) no-repeat $position-x center / $size;
+}
+
+.indent-r {
     clip-path: polygon(25% 0, 100% 0, 100% 100%, 25% 100%, 35% 50%);
 }
 
-.indent-pointing-left {
+.indent-l {
     clip-path: polygon(0 0, 75% 0, 65% 50%, 75% 100%, 0 100%);
 }
 
-.bg-svsports-portal {
-    background-position-x: right 5%;
-    background-size: 20%;
-    background-position-y: center;
-    background-color: white;
-    background-image: url('../../assets/svsports-portal.png');
-    background-repeat: no-repeat;
+.svs-portal {
+    @include background-properties(right 5%, 20%, '../../assets/svsports-portal.png');
 }
 
 .fake-cat {
-    background-size: 8%;
-    background-position-y: center;
-    background-position-x: left 10%;
-    background-color: white;
-    background-image: url('../../assets/fakeCat.png');
-    background-repeat: no-repeat;
+    @include background-properties(left 10%, 8%, '../../assets/fakeCat.png');
 }
 
-.bg-bag-of-words-graph {
-    background-position-x: right 5%;
-    background-size: 15%;
-    background-position-y: center;
-    background-color: white;
-    background-image: url('../../assets/BagOfWordsGraph.png');
-    background-repeat: no-repeat;
+.bag-of-words {
+    @include background-properties(right 5%, 15%, '../../assets/BagOfWordsGraph.png');
 }
 
-.bg-amp {
+.amp {
     background-position-y: center;
     background-position-x: left 5%;
     background-size: 20%;
@@ -94,16 +83,4 @@
     background-color: white;
     background-image: url('../../assets/locationNote.jpg');
     background-repeat: no-repeat;
-}
-
-.bg-city-sunset-pixel-art {
-    background-image: url('../../assets/CitySunsetPixelArt.gif');
-}
-
-.portrait {
-    background-image: url('../../assets/portrait.jpg');
-}
-
-.ultimate2 {
-    background-image: url('../../assets/ultimate2.jpg');
 }
